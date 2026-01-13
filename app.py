@@ -188,13 +188,13 @@ with st.sidebar:
 
     mode = st.radio(
         "Odabrati cilj:",
-        ["svi kriteriji biraju istu akciju", "svaki kriterij bira različitu akciju"],
+        ["1) svi kriteriji biraju istu akciju", "2) svaki kriterij bira različitu akciju"],
     )
 
     colA, colB = st.columns(2)
     with colA:
         if st.button("Generiraj", use_container_width=True):
-            if mode.startswith("(1)"):
+            if mode.startswith("1)"):
                 st.session_state.payoffs = generate_all_same(n, vmax=vmax)
             else:
                 st.session_state.payoffs = generate_all_different(n, alpha=alpha, vmax=vmax)
